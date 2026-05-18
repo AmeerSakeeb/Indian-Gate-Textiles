@@ -129,11 +129,11 @@ export default function CheckoutPage() {
                     <div className="grid grid-cols-2 gap-4">
                       <div>
                         <label className="block text-xs text-brand-muted mb-2 tracking-wider" style={{ letterSpacing: "0.08em" }}>FIRST NAME *</label>
-                        <input value={form.firstName} onChange={(e) => updateForm("firstName", e.target.value)} className="w-full px-4 py-3 rounded-xl text-sm text-white placeholder:text-brand-muted/70 bg-brand-secondary/80 border border-brand-muted/20 focus:border-brand-red outline-none" required />
+                        <input type="text" value={form.firstName} onChange={(e) => updateForm("firstName", e.target.value)} className="w-full px-4 py-3 rounded-xl text-sm text-white placeholder:text-brand-muted/70 bg-brand-secondary/80 border border-brand-muted/20 focus:border-brand-red outline-none" required />
                       </div>
                       <div>
                         <label className="block text-xs text-brand-muted mb-2 tracking-wider" style={{ letterSpacing: "0.08em" }}>LAST NAME *</label>
-                        <input value={form.lastName} onChange={(e) => updateForm("lastName", e.target.value)} className="w-full px-4 py-3 rounded-xl text-sm text-white placeholder:text-brand-muted/70 bg-brand-secondary/80 border border-brand-muted/20 focus:border-brand-red outline-none" required />
+                        <input type="text" value={form.lastName} onChange={(e) => updateForm("lastName", e.target.value)} className="w-full px-4 py-3 rounded-xl text-sm text-white placeholder:text-brand-muted/70 bg-brand-secondary/80 border border-brand-muted/20 focus:border-brand-red outline-none" required />
                       </div>
                       <div>
                         <label className="block text-xs text-brand-muted mb-2 tracking-wider" style={{ letterSpacing: "0.08em" }}>PHONE *</label>
@@ -145,15 +145,15 @@ export default function CheckoutPage() {
                       </div>
                       <div className="col-span-2">
                         <label className="block text-xs text-brand-muted mb-2 tracking-wider text-black" style={{ letterSpacing: "0.08em" }}>ADDRESS *</label>
-                        <input value={form.address} onChange={(e) => updateForm("address", e.target.value)} placeholder="Street address, apartment, etc." className="w-full px-4 py-3 rounded-xl text-sm" required />
+                        <input type="text" value={form.address} onChange={(e) => updateForm("address", e.target.value)} placeholder="Street address, apartment, etc." className="w-full px-4 py-3 rounded-xl text-sm" required />
                       </div>
                       <div>
                         <label className="block text-xs text-brand-muted mb-2 tracking-wider" style={{ letterSpacing: "0.08em" }}>CITY *</label>
-                        <input value={form.city} onChange={(e) => updateForm("city", e.target.value)} className="w-full px-4 py-3 rounded-xl text-sm" required />
+                        <input type="text" value={form.city} onChange={(e) => updateForm("city", e.target.value)} className="w-full px-4 py-3 rounded-xl text-sm" required />
                       </div>
                       <div>
                         <label className="block text-xs text-brand-muted mb-2 tracking-wider" style={{ letterSpacing: "0.08em" }}>DISTRICT</label>
-                        <input value={form.district} onChange={(e) => updateForm("district", e.target.value)} className="w-full px-4 py-3 rounded-xl text-sm" />
+                        <input type="text" value={form.district} onChange={(e) => updateForm("district", e.target.value)} className="w-full px-4 py-3 rounded-xl text-sm" />
                       </div>
                       <div className="col-span-2">
                         <label className="block text-xs text-brand-muted mb-2 tracking-wider" style={{ letterSpacing: "0.08em" }}>ORDER NOTES (optional)</label>

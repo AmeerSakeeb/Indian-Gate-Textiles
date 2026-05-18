@@ -65,7 +65,7 @@ export default function Footer() {
                 ["Outerwear", "/shop?category=outerwear"],
                 ["Accessories", "/shop?category=accessories"],
               ].map(([label, href]) => (
-                <li key={href}>
+                <li key={label}>
                   <Link href={href}
                     className="text-brand-muted hover:text-brand-white transition-colors duration-200"
                     style={{ fontSize: "14px" }}>
@@ -91,7 +91,7 @@ export default function Footer() {
                 ["Contact Us", "/contact"],
                 ["About Us", "/shop"],
               ].map(([label, href]) => (
-                <li key={href}>
+                <li key={label}>
                   <Link href={href}
                     className="text-brand-muted hover:text-brand-white transition-colors duration-200"
                     style={{ fontSize: "14px" }}>
