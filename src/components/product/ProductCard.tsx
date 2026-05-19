@@ -60,11 +60,11 @@ export default function ProductCard({ product, index = 0 }: Props) {
         setHovered(false);
         setActiveImage(0);
       }}
-      className="group relative"
+      className="group relative flex flex-col h-full bg-[#1E293B]/60 rounded-[22px] p-2 sm:p-3 border border-white/10 shadow-lg hover:border-brand-red/50 hover:shadow-[0_0_30px_rgba(153,27,27,0.25)] transition-all duration-500"
     >
-      <Link href={`/shop/${product.slug}`} className="block" id={`product-card-${product.id}`}>
+      <Link href={`/shop/${product.slug}`} className="flex flex-col h-full" id={`product-card-${product.id}`}>
         {/* Image Container */}
-        <div className="relative overflow-hidden rounded-2xl mb-4" style={{ aspectRatio: "3/4" }}>
+        <div className="relative overflow-hidden rounded-xl mb-4 shrink-0" style={{ aspectRatio: "3/4" }}>
           <Image
             src={product.images[activeImage] ?? product.images[0]}
             alt={product.name}
@@ -144,7 +144,7 @@ export default function ProductCard({ product, index = 0 }: Props) {
         </div>
 
         {/* Info */}
-        <div className="space-y-1.5">
+        <div className="space-y-2 flex-1 flex flex-col px-1 pb-1">
           <div className="flex items-center gap-1">
             {Array.from({ length: 5 }).map((_, i) => (
               <Star
@@ -158,26 +158,26 @@ export default function ProductCard({ product, index = 0 }: Props) {
             </span>
           </div>
 
-          <h3 className="font-heading font-semibold text-brand-white group-hover:text-brand-red transition-colors leading-snug line-clamp-2"
-            style={{ fontSize: "15px" }}>
+          <h3 className="font-heading font-semibold text-brand-white group-hover:text-brand-red transition-colors leading-snug line-clamp-2 text-sm sm:text-[15px]">
             {product.name}
           </h3>
 
-          <div className="flex items-baseline gap-2">
-            <span className="font-semibold text-brand-white" style={{ fontSize: "15px" }}>
+          <div className="flex flex-wrap items-baseline gap-1.5 sm:gap-2">
+            <span className="font-semibold text-brand-white text-[13px] sm:text-[15px]">
               {formatPrice(product.price)}
             </span>
             {product.comparePrice && (
-              <span className="line-through text-brand-muted" style={{ fontSize: "13px" }}>
+              <span className="line-through text-brand-muted text-[11px] sm:text-[13px]">
                 {formatPrice(product.comparePrice)}
               </span>
             )}
           </div>
 
           {/* Colors */}
-          {product.colors.length > 0 && (
-            <div className="flex gap-2 pt-1 items-center">
-              <span className="text-brand-muted text-[10px] uppercase font-bold mr-0.5">Colors</span>
+          <div className="mt-auto pt-2">
+            {product.colors.length > 0 && (
+              <div className="flex gap-2 items-center">
+                <span className="text-brand-muted text-[10px] uppercase font-bold mr-0.5">Colors</span>
               {product.colors.slice(0, 4).map((color) => (
                 <div
                   key={color}
@@ -193,8 +193,9 @@ export default function ProductCard({ product, index = 0 }: Props) {
               {product.colors.length > 4 && (
                 <span className="text-brand-muted text-xs self-center">+{product.colors.length - 4}</span>
               )}
-            </div>
-          )}
+              </div>
+            )}
+          </div>
         </div>
       </Link>
     </motion.div>

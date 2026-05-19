@@ -165,7 +165,7 @@ export const MOCK_PRODUCTS: Product[] = [
     comparePrice: 3800,
     images: [
       "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=800&q=85", // White Crop
-      "https://images.unsplash.com/photo-1618354691799-d40e1bba7a55?w=800&q=85", // Black Crop
+      "https://images.unsplash.com/photo-1503341455253-b2e723bb3dbb?w=800&q=85", // Black Crop
     ],
     category: "t-shirts",
     tags: ["crop", "tshirt", "women"],
@@ -208,8 +208,8 @@ export const MOCK_PRODUCTS: Product[] = [
     price: 4500,
     comparePrice: 5000,
     images: [
-      "https://images.unsplash.com/photo-1519278409-1f56fd08fce6?w=800&q=85", // Navy/Grey Kid Hoodie
-      "https://images.unsplash.com/photo-1622290291468-b7ebbdcbce3a?w=800&q=85", // Red Kid Hoodie
+      "https://images.unsplash.com/photo-1514090458221-65bb69cf63e6?w=800&q=85", // Navy/Grey Kid Hoodie
+      "https://images.unsplash.com/photo-1621452773781-0f992fd1f5cb?w=800&q=85", // Red Kid Hoodie
     ],
     category: "hoodies",
     tags: ["kids", "winter", "hoodie"],
@@ -229,8 +229,8 @@ export const MOCK_PRODUCTS: Product[] = [
     price: 2200,
     comparePrice: undefined,
     images: [
-      "https://images.unsplash.com/photo-1519278409-1f56fd08fce6?w=800&q=85", // White Kid Tee
-      "https://images.unsplash.com/photo-1622290319146-7b63df48a635?w=800&q=85", // Black Kid Tee
+      "https://images.unsplash.com/photo-1514090458221-65bb69cf63e6?w=800&q=85", // White Kid Tee
+      "https://images.unsplash.com/photo-1621452773781-0f992fd1f5cb?w=800&q=85", // Black Kid Tee
     ],
     category: "t-shirts",
     tags: ["kids", "tshirt", "everyday"],
@@ -262,7 +262,7 @@ export const MOCK_CATEGORIES: Category[] = [
     name: "Hoodies",
     slug: "hoodies",
     image:
-      "https://images.unsplash.com/photo-1556821840-3a63f15732ce?w=600&q=80",
+      "https://images.unsplash.com/photo-1509631179647-0177331693ae?w=600&q=80",
     count: 16,
     description: "Premium fleece, minimalist graphics, year-round warmth",
   },
@@ -298,7 +298,7 @@ export const MOCK_CATEGORIES: Category[] = [
     name: "Accessories",
     slug: "accessories",
     image:
-      "https://images.unsplash.com/photo-1523499335620-4ff33b4c4c22?w=600&q=80",
+      "https://images.unsplash.com/photo-1523779917675-b6ed3a42a561?w=600&q=80",
     count: 20,
     description: "Caps, bags, socks, and the finishing touches",
   },
@@ -435,7 +435,7 @@ export const INSTAGRAM_POSTS = [
   "https://images.unsplash.com/photo-1509631179647-0177331693ae?w=400&q=80",
   "https://images.unsplash.com/photo-1445205170230-053b83016050?w=400&q=80",
   "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=400&q=80",
-  "https://images.unsplash.com/photo-1496217590455-aa63a8550c23?w=400&q=80",
+  "https://images.unsplash.com/photo-1445205170230-053b83016050?w=400&q=80",
   "https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=400&q=80",
   "https://images.unsplash.com/photo-1485968579580-b6d095142e6e?w=400&q=80",
 ];
