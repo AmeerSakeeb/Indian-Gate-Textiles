@@ -74,33 +74,33 @@ export default function ProductCard({ product, index = 0 }: Props) {
           />
 
           {/* Badges & Actions */}
-          <div className="absolute top-3 left-3 flex flex-col gap-2 z-20">
-            {product.isNew && <span className="px-2.5 py-1 text-[10px] font-bold tracking-wider rounded-md text-brand-dark" style={{ background: "#F8FAFC" }}>NEW</span>}
-            {product.isSale && <span className="px-2.5 py-1 text-[10px] font-bold tracking-wider rounded-md text-white" style={{ background: "#991B1B" }}>SALE</span>}
+          <div className="absolute top-2 left-2 sm:top-3 sm:left-3 flex flex-col gap-1.5 sm:gap-2 z-20">
+            {product.isNew && <span className="px-2 py-0.5 sm:px-2.5 sm:py-1 text-[8px] sm:text-[10px] font-bold tracking-wider rounded sm:rounded-md text-brand-dark" style={{ background: "#F8FAFC" }}>NEW</span>}
+            {product.isSale && <span className="px-2 py-0.5 sm:px-2.5 sm:py-1 text-[8px] sm:text-[10px] font-bold tracking-wider rounded sm:rounded-md text-white" style={{ background: "#991B1B" }}>SALE</span>}
           </div>
           
-          <div className="absolute top-3 right-3 flex flex-col gap-2 z-20 opacity-100 sm:opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          <div className="absolute top-2 right-2 sm:top-3 sm:right-3 flex flex-col gap-1.5 sm:gap-2 z-20 opacity-100 sm:opacity-0 group-hover:opacity-100 transition-opacity duration-300">
             <button
               onClick={handleWishlist}
-              className="p-2 rounded-xl text-brand-dark transition-transform hover:scale-110"
+              className="p-1.5 sm:p-2 rounded-lg sm:rounded-xl text-brand-dark transition-transform hover:scale-110"
               style={{ background: "rgba(248, 250, 252, 0.9)", backdropFilter: "blur(4px)" }}
             >
-              <Heart size={16} className={wished ? "fill-brand-red text-brand-red" : ""} />
+              <Heart className={"w-3.5 h-3.5 sm:w-4 sm:h-4 " + (wished ? "fill-brand-red text-brand-red" : "")} />
             </button>
             <button
               onClick={(e) => { e.preventDefault(); e.stopPropagation(); window.location.href = `/shop/${product.slug}`; }}
-              className="p-2 rounded-xl text-brand-dark transition-transform hover:scale-110"
+              className="p-1.5 sm:p-2 rounded-lg sm:rounded-xl text-brand-dark transition-transform hover:scale-110"
               style={{ background: "rgba(248, 250, 252, 0.9)", backdropFilter: "blur(4px)" }}
             >
-              <Eye size={16} />
+              <Eye className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
             </button>
           </div>
 
           {/* Quick add */}
-          <div className="absolute bottom-0 left-0 right-0 p-3 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+          <div className="absolute bottom-0 left-0 right-0 p-2 sm:p-3 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
             <button
               onClick={handleQuickAdd}
-              className="w-full py-2.5 rounded-xl text-white text-xs font-semibold tracking-widest backdrop-blur-sm transition-all hover:opacity-90"
+              className="w-full py-2 sm:py-2.5 rounded-lg sm:rounded-xl text-white text-[10px] sm:text-xs font-semibold tracking-widest backdrop-blur-sm transition-all hover:opacity-90"
               style={{ background: "rgba(153,27,27,0.95)", letterSpacing: "0.1em" }}
             >
               QUICK ADD
@@ -109,12 +109,12 @@ export default function ProductCard({ product, index = 0 }: Props) {
 
           {/* Image dots */}
           {product.images.length > 1 && (
-            <div className="absolute bottom-14 left-0 right-0 flex justify-center gap-2 opacity-100 sm:opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20">
+            <div className="absolute bottom-10 sm:bottom-14 left-0 right-0 flex justify-center gap-1.5 sm:gap-2 opacity-100 sm:opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20">
               {product.images.map((_, i) => (
                 <button
                   key={i}
                   className={cn(
-                    "w-2 h-2 rounded-full transition-all duration-200",
+                    "w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full transition-all duration-200",
                     activeImage === i ? "bg-white scale-125" : "bg-white/50 hover:bg-white/90"
                   )}
                   onMouseEnter={() => setActiveImage(i)}
@@ -129,15 +129,15 @@ export default function ProductCard({ product, index = 0 }: Props) {
             <>
               <button
                 onClick={(e) => { e.preventDefault(); e.stopPropagation(); setActiveImage((p) => (p - 1 + product.images.length) % product.images.length); }}
-                className="absolute left-2 top-1/2 -translate-y-1/2 p-2 rounded-full bg-black/40 text-white opacity-100 sm:opacity-0 group-hover:opacity-100 transition-all hover:bg-black/80 z-20 backdrop-blur-sm"
+                className="absolute left-1 sm:left-2 top-1/2 -translate-y-1/2 p-1.5 sm:p-2 rounded-full bg-black/40 text-white opacity-100 sm:opacity-0 group-hover:opacity-100 transition-all hover:bg-black/80 z-20 backdrop-blur-sm"
               >
-                <ChevronLeft size={16} />
+                <ChevronLeft className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
               </button>
               <button
                 onClick={(e) => { e.preventDefault(); e.stopPropagation(); setActiveImage((p) => (p + 1) % product.images.length); }}
-                className="absolute right-2 top-1/2 -translate-y-1/2 p-2 rounded-full bg-black/40 text-white opacity-100 sm:opacity-0 group-hover:opacity-100 transition-all hover:bg-black/80 z-20 backdrop-blur-sm"
+                className="absolute right-1 sm:right-2 top-1/2 -translate-y-1/2 p-1.5 sm:p-2 rounded-full bg-black/40 text-white opacity-100 sm:opacity-0 group-hover:opacity-100 transition-all hover:bg-black/80 z-20 backdrop-blur-sm"
               >
-                <ChevronRight size={16} />
+                <ChevronRight className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
               </button>
             </>
           )}
