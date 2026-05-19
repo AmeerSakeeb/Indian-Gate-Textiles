@@ -76,9 +76,9 @@ export const MOCK_PRODUCTS: Product[] = [
     price: 4500,
     comparePrice: 5500,
     images: [
-      "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?w=800&q=85", // Black
-      "https://images.unsplash.com/photo-1529374255404-311a2a4f1fd9?w=800&q=85", // Grey
-      "https://images.unsplash.com/photo-1581655353564-df123a1eb820?w=800&q=85", // White
+      "https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?w=800&q=85", // Midnight Black Man Tee
+      "https://images.unsplash.com/photo-1529374255404-311a2a4f1fd9?w=800&q=85", // Slate Grey Man Tee
+      "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=800&q=85", // Off White Man Tee
     ],
     category: "t-shirts",
     tags: ["oversized", "premium", "men"],
@@ -98,9 +98,9 @@ export const MOCK_PRODUCTS: Product[] = [
     price: 6800,
     comparePrice: undefined,
     images: [
-      "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=800&q=85", // Beige
-      "https://images.unsplash.com/photo-1588359348347-9bc6cbbb689e?w=800&q=85", // White
-      "https://images.unsplash.com/photo-1598032895397-b9472444bf93?w=800&q=85", // Grey
+      "https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=800&q=85", // Stone Beige Man Shirt
+      "https://images.unsplash.com/photo-1617137968427-85924c800a22?w=800&q=85", // Off White Man Shirt
+      "https://images.unsplash.com/photo-1620012253295-c05cb1e65d81?w=800&q=85", // Slate Grey Man Shirt
     ],
     category: "shirts",
     tags: ["linen", "summer", "men"],
@@ -120,8 +120,8 @@ export const MOCK_PRODUCTS: Product[] = [
     price: 9500,
     comparePrice: 11000,
     images: [
-      "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?w=800&q=85", // Olive
-      "https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=800&q=85", // Black
+      "https://images.unsplash.com/photo-1617137984095-74e4e5e3613f?w=800&q=85", // Military Olive Man Trousers
+      "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=800&q=85", // Midnight Black Man Trousers
     ],
     category: "trousers",
     tags: ["cargo", "streetwear", "men"],
@@ -185,8 +185,8 @@ export const MOCK_PRODUCTS: Product[] = [
     price: 8500,
     comparePrice: undefined,
     images: [
-      "https://images.unsplash.com/photo-1509631179647-0177331693ae?w=800&q=85", // Grey
-      "https://images.unsplash.com/photo-1584370848010-d7fe6bc767ec?w=800&q=85", // Black
+      "https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=800&q=85", // Grey Smart Trousers
+      "https://images.unsplash.com/photo-1584370848010-d7fe6bc767ec?w=800&q=85", // Black Trousers
     ],
     category: "trousers",
     tags: ["trousers", "smart", "women"],
@@ -208,8 +208,8 @@ export const MOCK_PRODUCTS: Product[] = [
     price: 4500,
     comparePrice: 5000,
     images: [
-      "https://images.unsplash.com/photo-1514090458221-65bb69cf63e6?w=800&q=85", // Navy/Grey Kid Hoodie
-      "https://images.unsplash.com/photo-1621452773781-0f992fd1f5cb?w=800&q=85", // Red Kid Hoodie
+      "https://images.unsplash.com/photo-1519457431-44ccd64a579b?w=800&q=85", // Deep Navy Kid Hoodie
+      "https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?w=800&q=85", // Crimson/Orange Kid Hoodie
     ],
     category: "hoodies",
     tags: ["kids", "winter", "hoodie"],
@@ -229,8 +229,8 @@ export const MOCK_PRODUCTS: Product[] = [
     price: 2200,
     comparePrice: undefined,
     images: [
-      "https://images.unsplash.com/photo-1514090458221-65bb69cf63e6?w=800&q=85", // White Kid Tee
-      "https://images.unsplash.com/photo-1621452773781-0f992fd1f5cb?w=800&q=85", // Black Kid Tee
+      "https://images.unsplash.com/photo-1622290291165-d341f1938b86?w=800&q=85", // Off White Kid Tee
+      "https://images.unsplash.com/photo-1622290291468-a28f7a7dc6a8?w=800&q=85", // Midnight Black Kid Tee
     ],
     category: "t-shirts",
     tags: ["kids", "tshirt", "everyday"],
@@ -241,6 +241,252 @@ export const MOCK_PRODUCTS: Product[] = [
     description: "Pure cotton comfort for the little ones.",
     details: ["100% organic cotton", "Stain resistant", "Gentle on skin"],
     isNew: false, isFeatured: false, isSale: false, rating: 4.5, reviewCount: 8,
+  },
+  // ----------- ADDITIONAL PRODUCTS -----------
+  {
+    id: "9",
+    slug: "igt-mens-heavy-hoodie",
+    name: "IGT Premium Heavyweight Hoodie",
+    brand: "Indian Gate Textiles",
+    price: 8500,
+    comparePrice: 9500,
+    images: [
+      "https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=800&q=85", // Burgundy Men Hoodie
+      "https://images.unsplash.com/photo-1614975058789-41316d0e2e9c?w=800&q=85", // Forest Green Men Hoodie
+    ],
+    category: "hoodies",
+    tags: ["hoodie", "heavyweight", "men"],
+    sizes: ["S", "M", "L", "XL"],
+    colors: ["Burgundy", "Forest Green"],
+    stock: 25,
+    sku: "IGT-M-HH02",
+    description: "Ultra-heavyweight 400gsm French Terry hoodie designed for high structure and warmth.",
+    details: ["400gsm premium French Terry", "Double-lined hood", "Side rib panels"],
+    isNew: true, isFeatured: true, isSale: false, rating: 4.9, reviewCount: 92,
+  },
+  {
+    id: "10",
+    slug: "igt-mens-oxford-shirt",
+    name: "IGT Classic Oxford Shirt",
+    brand: "Indian Gate Textiles",
+    price: 6200,
+    comparePrice: undefined,
+    images: [
+      "https://images.unsplash.com/photo-1603252109303-2751441dd157?w=800&q=85", // Oxford Blue Shirt
+      "https://images.unsplash.com/photo-1620012253295-c05cb1e65d81?w=800&q=85", // Slate Grey Shirt
+    ],
+    category: "shirts",
+    tags: ["oxford", "classic", "men"],
+    sizes: ["S", "M", "L", "XL"],
+    colors: ["Oxford Blue", "Slate Grey"],
+    stock: 30,
+    sku: "IGT-M-OS02",
+    description: "A tailored cotton oxford button-down shirt that bridges the gap between smart and casual.",
+    details: ["100% fine cotton oxford", "Button-down collar", "Signature curved hem"],
+    isNew: false, isFeatured: true, isSale: false, rating: 4.6, reviewCount: 48,
+  },
+  {
+    id: "11",
+    slug: "igt-mens-bomber-jacket",
+    name: "IGT Utility Bomber Jacket",
+    brand: "Indian Gate Textiles",
+    price: 12500,
+    comparePrice: 14000,
+    images: [
+      "https://images.unsplash.com/photo-1551028719-00167b16eac5?w=800&q=85", // Midnight Black Bomber (Man)
+      "https://images.unsplash.com/photo-1520975954732-35dd22299614?w=800&q=85", // Classic Navy Bomber (Man)
+    ],
+    category: "outerwear",
+    tags: ["bomber", "jacket", "men"],
+    sizes: ["M", "L", "XL"],
+    colors: ["Midnight Black", "Classic Navy"],
+    stock: 15,
+    sku: "IGT-M-BJ02",
+    description: "Insulated utility flight bomber jacket with a water-resistant nylon shell.",
+    details: ["Water-resistant nylon shell", "Satin lining", "Utility sleeve pocket"],
+    isNew: true, isFeatured: true, isSale: true, rating: 4.8, reviewCount: 77,
+  },
+  {
+    id: "12",
+    slug: "igt-mens-chino-shorts",
+    name: "IGT Tailored Chino Shorts",
+    brand: "Indian Gate Textiles",
+    price: 4800,
+    comparePrice: 5500,
+    images: [
+      "https://images.unsplash.com/photo-1488161628813-04466f872be2?w=800&q=85", // Desert Khaki Shorts (Man)
+    ],
+    category: "trousers",
+    tags: ["shorts", "chino", "men"],
+    sizes: ["30", "32", "34", "36"],
+    colors: ["Desert Khaki"],
+    stock: 40,
+    sku: "IGT-M-CS02",
+    description: "Clean tailored chino shorts made from mid-weight stretch cotton twill.",
+    details: ["97% cotton 3% elastane stretch twill", "Slanted front pockets", "9-inch inseam"],
+    isNew: false, isFeatured: false, isSale: false, rating: 4.4, reviewCount: 19,
+  },
+  {
+    id: "13",
+    slug: "igt-womens-knit-top",
+    name: "IGT Ribbed Knit Crop Top",
+    brand: "Indian Gate Textiles",
+    price: 2900,
+    comparePrice: 3500,
+    images: [
+      "https://images.unsplash.com/photo-1503341455253-b2e723bb3dbb?w=800&q=85",
+    ],
+    category: "t-shirts",
+    tags: ["crop", "ribbed", "women"],
+    sizes: ["XS", "S", "M"],
+    colors: ["Midnight Black"],
+    stock: 35,
+    sku: "IGT-W-KT02",
+    description: "Soft ribbed cotton-knit sleeveless crop top featuring a supportive, figure-hugging fit.",
+    details: ["Ribbed cotton elastane blend", "Double lined front", "Scoop neckline"],
+    isNew: true, isFeatured: false, isSale: true, rating: 4.7, reviewCount: 26,
+  },
+  {
+    id: "14",
+    slug: "igt-womens-wrap-dress",
+    name: "IGT Linen Wrap Dress",
+    brand: "Indian Gate Textiles",
+    price: 7900,
+    comparePrice: undefined,
+    images: [
+      "https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03?w=800&q=85",
+      "https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=800&q=85",
+    ],
+    category: "dresses",
+    tags: ["women", "dress", "linen"],
+    sizes: ["XS", "S", "M", "L"],
+    colors: ["Sage Green", "Floral White"],
+    stock: 18,
+    sku: "IGT-W-WD02",
+    description: "Classic feminine wrap midi dress cut from premium breathable linen blend fabric.",
+    details: ["70% linen 30% cotton", "Tie waist waist closure", "V-neck silhouette"],
+    isNew: true, isFeatured: true, isSale: false, rating: 4.9, reviewCount: 31,
+  },
+  {
+    id: "15",
+    slug: "igt-womens-oversized-hoodie",
+    name: "IGT Cozy Oversized Hoodie",
+    brand: "Indian Gate Textiles",
+    price: 8200,
+    comparePrice: 9200,
+    images: [
+      "https://images.unsplash.com/photo-1548624149-f7b2e6ce49dc?w=800&q=85",
+    ],
+    category: "hoodies",
+    tags: ["cozy", "oversized", "women"],
+    sizes: ["S", "M", "L"],
+    colors: ["Lavender Cream"],
+    stock: 22,
+    sku: "IGT-W-OH02",
+    description: "Relaxed slouchy hoodie made of extra plush brushed cotton fleece.",
+    details: ["Brushed fleece interior", "Dropped shoulders", "Embroidered tonal chest branding"],
+    isNew: false, isFeatured: true, isSale: true, rating: 4.8, reviewCount: 56,
+  },
+  {
+    id: "16",
+    slug: "igt-womens-denim-jacket",
+    name: "IGT Signature Denim Jacket",
+    brand: "Indian Gate Textiles",
+    price: 11500,
+    comparePrice: 13000,
+    images: [
+      "https://images.unsplash.com/photo-1611312449412-6cefac5dc3e4?w=800&q=85",
+      "https://images.unsplash.com/photo-1576995853123-5a10305d93c0?w=800&q=85",
+    ],
+    category: "outerwear",
+    tags: ["women", "denim", "jacket"],
+    sizes: ["S", "M", "L"],
+    colors: ["Vintage Blue", "Bleach Wash"],
+    stock: 12,
+    sku: "IGT-W-DJ02",
+    description: "A timeless trucker jacket constructed from premium 13oz heavy denim.",
+    details: ["100% rigid cotton denim", "Branded silver button hardware", "Dual chest pockets"],
+    isNew: true, isFeatured: false, isSale: false, rating: 4.6, reviewCount: 15,
+  },
+  {
+    id: "17",
+    slug: "igt-kids-dungarees",
+    name: "IGT Kids Denim Dungarees",
+    brand: "Indian Gate Textiles",
+    price: 5200,
+    comparePrice: 5800,
+    images: [
+      "https://images.unsplash.com/photo-1519457431-44ccd64a579b?w=800&q=85",
+    ],
+    category: "trousers",
+    tags: ["kids", "denim", "dungarees"],
+    sizes: ["2Y", "4Y", "6Y", "8Y"],
+    colors: ["Classic Indigo"],
+    stock: 10,
+    sku: "IGT-K-DD02",
+    description: "Durable and adorable rigid denim overalls with adjustable shoulder buckles.",
+    details: ["100% durable cotton denim", "Adjustable shoulder clasps", "Functional tool loops"],
+    isNew: true, isFeatured: true, isSale: false, rating: 4.9, reviewCount: 12,
+  },
+  {
+    id: "18",
+    slug: "igt-kids-shorts",
+    name: "IGT Kids Organic Cotton Shorts",
+    brand: "Indian Gate Textiles",
+    price: 2500,
+    comparePrice: undefined,
+    images: [
+      "https://images.unsplash.com/photo-1607990283143-e81e7a2c93ab?w=800&q=85",
+    ],
+    category: "trousers",
+    tags: ["kids", "organic", "shorts"],
+    sizes: ["2Y", "4Y", "6Y", "8Y", "10Y"],
+    colors: ["Caramel Brown"],
+    stock: 28,
+    sku: "IGT-K-OS02",
+    description: "Soft pull-on organic cotton canvas utility shorts with elasticated waistband.",
+    details: ["100% organic cotton canvas", "Elastic drawstring waistband", "Side cargo pocketing"],
+    isNew: false, isFeatured: false, isSale: false, rating: 4.7, reviewCount: 9,
+  },
+  {
+    id: "19",
+    slug: "igt-kids-sweatshirt",
+    name: "IGT Kids Active Sweatshirt",
+    brand: "Indian Gate Textiles",
+    price: 3900,
+    comparePrice: 4500,
+    images: [
+      "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=800&q=85",
+    ],
+    category: "hoodies",
+    tags: ["kids", "sweatshirt", "active"],
+    sizes: ["4Y", "6Y", "8Y", "10Y"],
+    colors: ["Heather Grey"],
+    stock: 20,
+    sku: "IGT-K-AS02",
+    description: "Super soft crewneck fleece sweater optimized for active play.",
+    details: ["Cotton poly active fleece", "Ribbed crew collar and cuffs", "Raglan sleeve design"],
+    isNew: true, isFeatured: false, isSale: true, rating: 4.8, reviewCount: 14,
+  },
+  {
+    id: "20",
+    slug: "igt-kids-sun-hat",
+    name: "IGT Kids Summer Sun Hat",
+    brand: "Indian Gate Textiles",
+    price: 1800,
+    comparePrice: 2200,
+    images: [
+      "https://images.unsplash.com/photo-1576053139778-7e32f2ae3cfd?w=800&q=85", // Bright Yellow Kid Sun Hat
+    ],
+    category: "accessories",
+    tags: ["kids", "hat", "summer"],
+    sizes: ["One Size"],
+    colors: ["Bright Yellow"],
+    stock: 40,
+    sku: "IGT-K-SH02",
+    description: "Wide-brimmed cotton sun bucket hat offering perfect UV face protection.",
+    details: ["100% soft cotton canvas", "Chin tie strap adjustments", "Embroidered sun details"],
+    isNew: false, isFeatured: true, isSale: false, rating: 4.6, reviewCount: 8,
   },
 ];
 

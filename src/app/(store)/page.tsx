@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
@@ -31,7 +31,7 @@ function HeroSection() {
           sizes="100vw"
         />
         <div className="absolute inset-0" style={{
-          background: "linear-gradient(to bottom, rgba(2,6,23,0.55) 0%, rgba(2,6,23,0.2) 40%, rgba(2,6,23,0.8) 100%)"
+          background: "linear-gradient(to bottom, rgba(2,6,23,0.7) 0%, rgba(2,6,23,0.45) 45%, rgba(2,6,23,0.9) 100%)"
         }} />
       </motion.div>
 
@@ -41,8 +41,8 @@ function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.8 }}
-          className="text-brand-muted tracking-widest mb-6"
-          style={{ fontSize: "11px", letterSpacing: "0.4em" }}
+          className="text-slate-200 font-semibold tracking-widest mb-6"
+          style={{ fontSize: "11px", letterSpacing: "0.4em", textShadow: "0 2px 4px rgba(0,0,0,0.5)" }}
         >
           MATALE · SRI LANKA · EST. 2024
         </motion.p>
@@ -63,8 +63,8 @@ function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.7, duration: 0.8 }}
-          className="text-brand-muted mb-10 max-w-lg mx-auto leading-relaxed"
-          style={{ fontSize: "16px" }}
+          className="text-slate-200 mb-10 max-w-lg mx-auto leading-relaxed font-medium"
+          style={{ fontSize: "16px", textShadow: "0 2px 4px rgba(0,0,0,0.5)" }}
         >
           {BRAND.tagline}
         </motion.p>
@@ -78,7 +78,7 @@ function HeroSection() {
           <Link
             href="/shop"
             id="hero-shop-btn"
-            className="group inline-flex items-center justify-center gap-2 px-8 py-4 text-white font-heading font-semibold rounded-xl tracking-widest transition-all duration-300 hover:scale-[1.02]"
+            className="group inline-flex items-center justify-center gap-2 px-8 py-4 text-white font-heading font-semibold rounded-xl tracking-widest transition-all duration-300 hover:scale-[1.02] shadow-lg shadow-black/30"
             style={{ background: "#991B1B", fontSize: "12px", letterSpacing: "0.15em" }}
           >
             SHOP NOW
@@ -87,9 +87,9 @@ function HeroSection() {
           <Link
             href="/about"
             id="hero-story-btn"
-            className="inline-flex items-center justify-center px-8 py-4 font-heading font-semibold rounded-xl tracking-widest transition-all duration-300 hover:bg-white/10"
+            className="inline-flex items-center justify-center px-8 py-4 font-heading font-semibold rounded-xl tracking-widest transition-all duration-300 hover:bg-white/10 shadow-lg shadow-black/10"
             style={{
-              border: "1px solid rgba(248,250,252,0.3)",
+              border: "1px solid rgba(248,250,252,0.5)",
               color: "#F8FAFC",
               fontSize: "12px",
               letterSpacing: "0.15em",
@@ -113,109 +113,150 @@ function HeroSection() {
   );
 }
 
-// ─── FEATURED CATEGORIES ──────────────────────────────────────────────────────
-function FeaturedCategories() {
-  const featured = MOCK_CATEGORIES.slice(0, 4);
+// ─── DEMOGRAPHIC EXPLORER ───────────────────────────────────────────────────
+function DemographicExplorer() {
+  const [activeTab, setActiveTab] = useState<"men" | "women" | "kids">("men");
+
+  // Dynamic categorization of garments inside the active demographic
+  const filteredProducts = MOCK_PRODUCTS.filter((p) => p.tags.includes(activeTab));
+
+  // Determine subcategories present under the active demographic
+  const demographicSubcategories = MOCK_CATEGORIES.map((cat) => {
+    const productsInCat = filteredProducts.filter((p) => p.category === cat.slug);
+    if (productsInCat.length === 0) return null;
+    return {
+      ...cat,
+      count: productsInCat.length,
+      image: productsInCat[0].images[0], // Use first matching product's cover image
+    };
+  }).filter(Boolean) as (typeof MOCK_CATEGORIES[0] & { count: number })[];
+
+  // Get curated trending products for the active demographic (featured items)
+  const trendingForDemographic = filteredProducts.filter((p) => p.isFeatured).slice(0, 4);
 
   return (
     <section className="py-20 lg:py-28 px-4 max-w-7xl mx-auto">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.7 }}
-        className="flex items-end justify-between mb-12"
-      >
-        <div>
-          <p className="text-brand-muted tracking-widest mb-2" style={{ fontSize: "11px", letterSpacing: "0.3em" }}>
-            BROWSE
-          </p>
-          <h2 className="font-heading font-bold text-brand-white" style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}>
-            Shop by Category
-          </h2>
+      {/* Main Tabs for Men, Women, Kids */}
+      <div className="text-center mb-16">
+        <p className="text-brand-muted tracking-widest mb-3" style={{ fontSize: "11px", letterSpacing: "0.3em" }}>
+          DISCOVER
+        </p>
+        <h2 className="font-heading font-bold text-brand-white mb-8" style={{ fontSize: "clamp(2.5rem, 5vw, 4rem)", letterSpacing: "-0.02em" }}>
+          Shop by Demographic
+        </h2>
+
+        {/* Dynamic Demographic Tabs */}
+        <div className="inline-flex p-1.5 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md">
+          {(["men", "women", "kids"] as const).map((tab) => {
+            const isActive = activeTab === tab;
+            return (
+              <button
+                key={tab}
+                onClick={() => setActiveTab(tab)}
+                className="relative px-8 py-3.5 rounded-xl font-heading font-bold text-sm tracking-wider uppercase transition-all duration-300"
+                style={{
+                  color: isActive ? "#FFFFFF" : "#94A3B8",
+                  background: isActive ? "rgba(153, 27, 27, 0.9)" : "transparent",
+                  boxShadow: isActive ? "0 4px 20px rgba(153, 27, 27, 0.3)" : "none",
+                }}
+              >
+                {tab === "kids" ? "Kids" : tab}
+              </button>
+            );
+          })}
         </div>
-        <Link
-          href="/shop"
-          className="hidden sm:flex items-center gap-2 text-brand-muted hover:text-brand-white transition-colors group"
-          style={{ fontSize: "13px" }}
-        >
-          View all
-          <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
-        </Link>
-      </motion.div>
-
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-        {featured.map((cat, i) => (
-          <motion.div
-            key={cat.id}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: i * 0.1, duration: 0.6 }}
-          >
-            <Link
-              href={`/shop?category=${cat.slug}`}
-              id={`category-card-${cat.slug}`}
-              className="group relative block overflow-hidden rounded-2xl"
-              style={{ aspectRatio: i === 0 || i === 3 ? "3/4" : "1/1" }}
-            >
-              <Image
-                src={cat.image}
-                alt={cat.name}
-                fill
-                className="object-cover transition-transform duration-700 group-hover:scale-[1.06]"
-                sizes="(max-width: 640px) 50vw, 25vw"
-              />
-              <div className="absolute inset-0 transition-opacity duration-300"
-                style={{ background: "linear-gradient(to top, rgba(2,6,23,0.85) 0%, rgba(2,6,23,0.1) 60%)" }}
-              />
-              <div className="absolute bottom-0 left-0 right-0 p-5">
-                <p className="font-heading font-bold text-brand-white mb-1" style={{ fontSize: "18px" }}>
-                  {cat.name}
-                </p>
-                <p className="text-brand-muted text-xs">{cat.count} products</p>
-              </div>
-            </Link>
-          </motion.div>
-        ))}
       </div>
-    </section>
-  );
-}
 
-// ─── TRENDING PRODUCTS ────────────────────────────────────────────────────────
-function TrendingProducts() {
-  const trending = MOCK_PRODUCTS.filter((p) => p.isFeatured).slice(0, 4);
-
-  return (
-    <section className="py-20 lg:py-28" style={{ background: "rgba(15,23,42,0.5)" }}>
-      <div className="px-4 max-w-7xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
-          className="flex items-end justify-between mb-12"
-        >
+      {/* Grid of Subcategories within active demographic */}
+      <div className="mb-20">
+        <div className="flex items-end justify-between mb-8">
           <div>
-            <p className="text-brand-muted tracking-widest mb-2" style={{ fontSize: "11px", letterSpacing: "0.3em" }}>
-              BESTSELLERS
+            <p className="text-brand-muted tracking-widest mb-2" style={{ fontSize: "11px", letterSpacing: "0.2em" }}>
+              CATEGORIES
             </p>
-            <h2 className="font-heading font-bold text-brand-white" style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}>
-              Trending Now
-            </h2>
+            <h3 className="font-heading font-bold text-brand-white capitalize animate-fade-in" style={{ fontSize: "clamp(1.5rem, 3vw, 2rem)" }}>
+              {activeTab === "kids" ? "Kids'" : `${activeTab}'s`} Garments
+            </h3>
           </div>
-          <Link href="/shop" className="hidden sm:flex items-center gap-2 text-brand-muted hover:text-brand-white transition-colors group" style={{ fontSize: "13px" }}>
-            View all <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+          <Link
+            href={`/shop?gender=${activeTab}`}
+            className="flex items-center gap-2 text-brand-muted hover:text-brand-white transition-colors group"
+            style={{ fontSize: "13px" }}
+          >
+            Explore all {activeTab === "kids" ? "Kids" : activeTab}
+            <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
           </Link>
-        </motion.div>
+        </div>
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
-          {trending.map((product, i) => (
-            <ProductCard key={product.id} product={product} index={i} />
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          {demographicSubcategories.map((sub, i) => (
+            <motion.div
+              key={sub.slug + activeTab}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: i * 0.08, duration: 0.5 }}
+            >
+              <Link
+                href={`/shop?gender=${activeTab}&category=${sub.slug}`}
+                className="group relative block overflow-hidden rounded-2xl border border-white/5"
+                style={{ aspectRatio: "1/1" }}
+              >
+                <Image
+                  src={sub.image}
+                  alt={sub.name}
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-[1.06]"
+                  sizes="(max-width: 640px) 50vw, 25vw"
+                />
+                <div
+                  className="absolute inset-0 transition-opacity duration-300"
+                  style={{
+                    background: "linear-gradient(to top, rgba(2,6,23,0.9) 0%, rgba(2,6,23,0.3) 60%, rgba(2,6,23,0.1) 100%)",
+                  }}
+                />
+                <div className="absolute bottom-0 left-0 right-0 p-5">
+                  <p className="font-heading font-bold text-brand-white mb-1" style={{ fontSize: "18px", textShadow: "0 1px 3px rgba(0,0,0,0.6)" }}>
+                    {sub.name}
+                  </p>
+                  <p className="text-gray-200 text-xs font-semibold" style={{ textShadow: "0 1px 2px rgba(0,0,0,0.6)" }}>
+                    {sub.count} {sub.count === 1 ? "product" : "products"}
+                  </p>
+                </div>
+              </Link>
+            </motion.div>
           ))}
         </div>
       </div>
+
+      {/* Trending Items within active demographic */}
+      {trendingForDemographic.length > 0 && (
+        <div className="pt-12" style={{ borderTop: "1px solid rgba(255,255,255,0.05)" }}>
+          <div className="flex items-end justify-between mb-8">
+            <div>
+              <p className="text-brand-muted tracking-widest mb-2" style={{ fontSize: "11px", letterSpacing: "0.2em" }}>
+                TRENDING NOW
+              </p>
+              <h3 className="font-heading font-bold text-brand-white capitalize" style={{ fontSize: "clamp(1.5rem, 3vw, 2rem)" }}>
+                {activeTab === "kids" ? "Kids'" : `${activeTab}'s`} Bestsellers
+              </h3>
+            </div>
+            <Link
+              href={`/shop?gender=${activeTab}&sort=featured`}
+              className="flex items-center gap-2 text-brand-muted hover:text-brand-white transition-colors group"
+              style={{ fontSize: "13px" }}
+            >
+              Shop Bestsellers
+              <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+            </Link>
+          </div>
+
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+            {trendingForDemographic.map((product, i) => (
+              <ProductCard key={product.id + activeTab} product={product} index={i} />
+            ))}
+          </div>
+        </div>
+      )}
     </section>
   );
 }
@@ -567,8 +608,7 @@ export default function HomePage() {
   return (
     <>
       <HeroSection />
-      <FeaturedCategories />
-      <TrendingProducts />
+      <DemographicExplorer />
       <PromoBanner />
       <NewArrivals />
       <BrandStory />

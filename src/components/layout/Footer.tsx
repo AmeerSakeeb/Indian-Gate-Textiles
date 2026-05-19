@@ -84,12 +84,12 @@ export default function Footer() {
             </h3>
             <ul className="space-y-3">
               {[
-                ["FAQ", "/shop"],
+                ["FAQ", "/faq"],
                 ["Shipping Policy", "/shipping-policy"],
                 ["Returns & Exchanges", "/returns"],
                 ["Size Guide", "/size-guide"],
                 ["Contact Us", "/contact"],
-                ["About Us", "/shop"],
+                ["About Us", "/about"],
               ].map(([label, href]) => (
                 <li key={label}>
                   <Link href={href}
