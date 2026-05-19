@@ -111,4 +111,5 @@ export const NAV_LINKS = [
   { href: "/shop?category=new-arrivals", label: "New Arrivals" },
   { href: "/shop", label: "All" },
   { href: "/about", label: "Our Story" },
+  { href: "/admin", label: "Admin" },
 ];
