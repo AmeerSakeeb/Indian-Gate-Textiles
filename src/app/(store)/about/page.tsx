@@ -4,6 +4,8 @@ import { motion } from "framer-motion";
 import { ShieldCheck, Heart, Sparkles, MapPin, ArrowRight, Award } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { BRAND } from "@/lib/constants";
+import { INSTAGRAM_POSTS } from "@/lib/mock-data";
 
 const VALUES = [
   {
@@ -189,6 +191,117 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* Instagram Gallery & Newsletter */}
+      <InstagramGallery />
+      <Newsletter />
+
     </div>
+  );
+}
+
+// ─── INSTAGRAM GALLERY ────────────────────────────────────────────────────────
+function InstagramGallery() {
+  return (
+    <section className="py-20 lg:py-28 border-t border-white/5" style={{ background: "rgba(15,23,42,0.4)" }}>
+      <div className="max-w-7xl mx-auto px-4">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-12"
+        >
+          <p className="text-brand-red font-semibold tracking-widest mb-3 text-xs uppercase">FOLLOW US</p>
+          <h2 className="font-heading font-bold text-brand-white mb-2" style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}>
+            @indiangatetextiles
+          </h2>
+          <p className="text-brand-muted" style={{ fontSize: "14px" }}>Tag us in your fits</p>
+        </motion.div>
+
+        <div className="grid grid-cols-3 md:grid-cols-6 gap-2">
+          {INSTAGRAM_POSTS.map((url, i) => (
+            <motion.a
+              key={i}
+              href={BRAND.social.instagram}
+              target="_blank"
+              rel="noopener noreferrer"
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.08 }}
+              className="relative overflow-hidden rounded-xl group block"
+              style={{ aspectRatio: "1/1" }}
+            >
+              <Image
+                src={url}
+                alt={`Instagram post ${i + 1}`}
+                fill
+                className="object-cover transition-transform duration-500 group-hover:scale-110"
+                sizes="(max-width: 640px) 33vw, 16vw"
+              />
+              <div className="absolute inset-0 bg-brand-red/0 group-hover:bg-brand-red/20 transition-all duration-300" />
+            </motion.a>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// ─── NEWSLETTER ───────────────────────────────────────────────────────────────
+function Newsletter() {
+  return (
+    <section className="py-20 px-4 border-t border-white/5">
+      <div className="max-w-2xl mx-auto text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+        >
+          <p className="text-brand-red font-semibold tracking-widest mb-4 text-xs uppercase">
+            STAY IN THE LOOP
+          </p>
+          <h2 className="font-heading font-bold text-brand-white mb-4" style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}>
+            Join the Inner Circle
+          </h2>
+          <p className="text-brand-muted mb-8" style={{ fontSize: "16px" }}>
+            Be the first to know about new drops, exclusive offers, and behind-the-scenes stories.
+          </p>
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
+              alert("Thanks for subscribing!");
+            }}
+            className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto"
+          >
+            <input
+              type="email"
+              name="email"
+              id="newsletter-email"
+              placeholder="your@email.com"
+              required
+              className="flex-1 px-5 py-4 rounded-xl text-sm"
+              style={{
+                background: "rgba(30,41,59,0.8)",
+                border: "1px solid rgba(148,163,184,0.15)",
+                color: "#F8FAFC",
+                outline: "none"
+              }}
+            />
+            <button
+              type="submit"
+              id="newsletter-submit"
+              className="px-7 py-4 font-heading font-semibold text-white rounded-xl tracking-wider transition-all hover:scale-[1.02]"
+              style={{ background: "#991B1B", fontSize: "12px", letterSpacing: "0.12em", whiteSpace: "nowrap" }}
+            >
+              SUBSCRIBE
+            </button>
+          </form>
+          <p className="text-brand-muted mt-4" style={{ fontSize: "12px" }}>
+            No spam, ever. Unsubscribe anytime.
+          </p>
+        </motion.div>
+      </div>
+    </section>
   );
 }

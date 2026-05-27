@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 import Link from "next/link";
-import { X, Instagram, MessageCircle } from "lucide-react";
+import { X, Instagram, MessageCircle, Home } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { NAV_LINKS, BRAND } from "@/lib/constants";
 
@@ -60,6 +60,23 @@ export default function MobileNav({ isOpen, onClose }: Props) {
 
             {/* Nav Links */}
             <nav className="flex flex-col px-6 py-8 gap-1 flex-1">
+            {/* Home — always first */}
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.05 }}
+              >
+                <Link
+                  href="/"
+                  onClick={onClose}
+                  className="flex items-center gap-3 py-3 font-heading font-semibold tracking-widest transition-colors text-brand-white hover:text-brand-red"
+                  style={{ fontSize: "13px", letterSpacing: "0.15em", borderBottom: "1px solid rgba(148,163,184,0.06)" }}
+                >
+                  <Home size={15} className="flex-shrink-0 opacity-60" />
+                  HOME
+                </Link>
+              </motion.div>
+
               {NAV_LINKS.map((link, i) => (
                 <motion.div
                   key={link.href}

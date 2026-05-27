@@ -99,8 +99,8 @@ export const MOCK_PRODUCTS: Product[] = [
     comparePrice: undefined,
     images: [
       "https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=800&q=85", // Stone Beige Man Shirt
-      "https://images.unsplash.com/photo-1617137968427-85924c800a22?w=800&q=85", // Off White Man Shirt
-      "https://images.unsplash.com/photo-1620012253295-c05cb1e65d81?w=800&q=85", // Slate Grey Man Shirt
+      "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=800&q=85", // Off White Man Shirt
+      "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=800&q=85", // Slate Grey Man Shirt
     ],
     category: "shirts",
     tags: ["linen", "summer", "men"],
@@ -121,7 +121,7 @@ export const MOCK_PRODUCTS: Product[] = [
     comparePrice: 11000,
     images: [
       "https://images.unsplash.com/photo-1617137984095-74e4e5e3613f?w=800&q=85", // Military Olive Man Trousers
-      "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=800&q=85", // Midnight Black Man Trousers
+      "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?w=800&q=85", // Midnight Black Man Trousers
     ],
     category: "trousers",
     tags: ["cargo", "streetwear", "men"],
@@ -252,7 +252,7 @@ export const MOCK_PRODUCTS: Product[] = [
     comparePrice: 9500,
     images: [
       "https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=800&q=85", // Burgundy Men Hoodie
-      "https://images.unsplash.com/photo-1614975058789-41316d0e2e9c?w=800&q=85", // Forest Green Men Hoodie
+      "https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=800&q=85", // Forest Green Men Hoodie
     ],
     category: "hoodies",
     tags: ["hoodie", "heavyweight", "men"],
@@ -273,7 +273,7 @@ export const MOCK_PRODUCTS: Product[] = [
     comparePrice: undefined,
     images: [
       "https://images.unsplash.com/photo-1603252109303-2751441dd157?w=800&q=85", // Oxford Blue Shirt
-      "https://images.unsplash.com/photo-1620012253295-c05cb1e65d81?w=800&q=85", // Slate Grey Shirt
+      "https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=800&q=85", // Slate Grey Shirt
     ],
     category: "shirts",
     tags: ["oxford", "classic", "men"],
@@ -314,7 +314,7 @@ export const MOCK_PRODUCTS: Product[] = [
     price: 4800,
     comparePrice: 5500,
     images: [
-      "https://images.unsplash.com/photo-1488161628813-04466f872be2?w=800&q=85", // Desert Khaki Shorts (Man)
+      "https://images.unsplash.com/photo-1529374255404-311a2a4f1fd9?w=800&q=85", // Desert Khaki Shorts (Man)
     ],
     category: "trousers",
     tags: ["shorts", "chino", "men"],
@@ -375,7 +375,7 @@ export const MOCK_PRODUCTS: Product[] = [
     price: 8200,
     comparePrice: 9200,
     images: [
-      "https://images.unsplash.com/photo-1548624149-f7b2e6ce49dc?w=800&q=85",
+      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=800&q=85", // Lavender Cream Women Hoodie
     ],
     category: "hoodies",
     tags: ["cozy", "oversized", "women"],
@@ -395,8 +395,8 @@ export const MOCK_PRODUCTS: Product[] = [
     price: 11500,
     comparePrice: 13000,
     images: [
-      "https://images.unsplash.com/photo-1611312449412-6cefac5dc3e4?w=800&q=85",
-      "https://images.unsplash.com/photo-1576995853123-5a10305d93c0?w=800&q=85",
+      "https://images.unsplash.com/photo-1551028719-00167b16eac5?w=800&q=85", // Vintage Blue Denim Jacket
+      "https://images.unsplash.com/photo-1520975954732-35dd22299614?w=800&q=85", // Bleach Wash Denim Jacket
     ],
     category: "outerwear",
     tags: ["women", "denim", "jacket"],
@@ -436,7 +436,7 @@ export const MOCK_PRODUCTS: Product[] = [
     price: 2500,
     comparePrice: undefined,
     images: [
-      "https://images.unsplash.com/photo-1607990283143-e81e7a2c93ab?w=800&q=85",
+      "https://images.unsplash.com/photo-1622290291165-d341f1938b86?w=800&q=85", // Caramel Brown Kids Shorts
     ],
     category: "trousers",
     tags: ["kids", "organic", "shorts"],
@@ -456,7 +456,7 @@ export const MOCK_PRODUCTS: Product[] = [
     price: 3900,
     comparePrice: 4500,
     images: [
-      "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=800&q=85",
+      "https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?w=800&q=85", // Heather Grey Sweatshirt
     ],
     category: "hoodies",
     tags: ["kids", "sweatshirt", "active"],
@@ -476,7 +476,7 @@ export const MOCK_PRODUCTS: Product[] = [
     price: 1800,
     comparePrice: 2200,
     images: [
-      "https://images.unsplash.com/photo-1576053139778-7e32f2ae3cfd?w=800&q=85", // Bright Yellow Kid Sun Hat
+      "https://images.unsplash.com/photo-1622290291468-a28f7a7dc6a8?w=800&q=85", // Bright Yellow Kid Sun Hat
     ],
     category: "accessories",
     tags: ["kids", "hat", "summer"],

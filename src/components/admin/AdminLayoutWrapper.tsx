@@ -42,11 +42,19 @@ export default function AdminLayoutWrapper({
         style={{ width: "240px", background: "#0F172A", borderRight: "1px solid rgba(148,163,184,0.08)" }}
       >
         {/* Logo */}
-        <div className="px-6 py-6" style={{ borderBottom: "1px solid rgba(148,163,184,0.08)" }}>
-          <p className="font-heading font-bold text-brand-white tracking-widest" style={{ fontSize: "14px", letterSpacing: "0.2em" }}>
+        <div className="px-4 py-5" style={{ borderBottom: "1px solid rgba(148,163,184,0.08)" }}>
+          <p className="font-heading font-bold text-brand-white tracking-widest mb-1" style={{ fontSize: "14px", letterSpacing: "0.2em" }}>
             INDIAN GATE
           </p>
-          <p className="text-brand-muted tracking-widest" style={{ fontSize: "8px", letterSpacing: "0.35em" }}>ADMIN PANEL</p>
+          <p className="text-brand-muted tracking-widest mb-4" style={{ fontSize: "8px", letterSpacing: "0.35em" }}>ADMIN PANEL</p>
+          <Link
+            href="/"
+            className="flex items-center gap-2 px-3 py-2.5 rounded-xl text-sm font-heading font-semibold text-white transition-all hover:scale-[1.02] w-full"
+            style={{ background: "rgba(153,27,27,0.25)", border: "1px solid rgba(153,27,27,0.4)" }}
+          >
+            <span>←</span>
+            Back to Store
+          </Link>
         </div>
 
         {/* Nav */}
@@ -70,11 +78,9 @@ export default function AdminLayoutWrapper({
           })}
         </nav>
 
-        {/* Bottom */}
-        <div className="px-6 py-4" style={{ borderTop: "1px solid rgba(148,163,184,0.08)" }}>
-          <Link href="/" className="text-xs text-brand-muted hover:text-brand-white transition-colors">
-            ← Back to Store
-          </Link>
+        {/* Bottom spacer */}
+        <div className="px-4 py-4" style={{ borderTop: "1px solid rgba(148,163,184,0.08)" }}>
+          <p className="text-brand-muted text-[10px] text-center tracking-widest" style={{ letterSpacing: "0.1em" }}>INDIAN GATE © 2024</p>
         </div>
       </aside>
 

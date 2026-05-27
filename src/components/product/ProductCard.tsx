@@ -20,9 +20,14 @@ type Props = {
 export default function ProductCard({ product, index = 0 }: Props) {
   const [activeImage, setActiveImage] = useState(0);
   const [hovered, setHovered] = useState(false);
+  const [imgErrors, setImgErrors] = useState<Record<number, boolean>>({});
   const { addItem } = useCart();
   const { toggle, isWished } = useWishlist();
   const wished = isWished(product.id);
+
+  const handleImgError = (idx: number) => {
+    setImgErrors((prev) => ({ ...prev, [idx]: true }));
+  };
 
   const discount = product.comparePrice
     ? Math.round(((product.comparePrice - product.price) / product.comparePrice) * 100)
@@ -65,13 +70,23 @@ export default function ProductCard({ product, index = 0 }: Props) {
       <Link href={`/shop/${product.slug}`} className="flex flex-col h-full" id={`product-card-${product.id}`}>
         {/* Image Container */}
         <div className="relative overflow-hidden rounded-xl mb-4 shrink-0" style={{ aspectRatio: "3/4" }}>
-          <Image
-            src={product.images[activeImage] ?? product.images[0]}
-            alt={product.name}
-            fill
-            className="object-cover transition-all duration-700 group-hover:scale-[1.04]"
-            sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
-          />
+          {imgErrors[activeImage] ? (
+            <div
+              className="absolute inset-0 flex flex-col items-center justify-center"
+              style={{ background: "linear-gradient(135deg, #1E293B 0%, #0F172A 100%)" }}
+            >
+              <span style={{ fontSize: "40px", opacity: 0.25 }}>👕</span>
+            </div>
+          ) : (
+            <Image
+              src={product.images[activeImage] ?? product.images[0]}
+              alt={product.name}
+              fill
+              className="object-cover transition-all duration-700 group-hover:scale-[1.04]"
+              sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+              onError={() => handleImgError(activeImage)}
+            />
+          )}
 
           {/* Badges & Actions */}
           <div className="absolute top-2 left-2 sm:top-3 sm:left-3 flex flex-col gap-1.5 sm:gap-2 z-20">

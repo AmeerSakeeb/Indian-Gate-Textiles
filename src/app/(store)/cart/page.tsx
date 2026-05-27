@@ -32,6 +32,17 @@ export default function CartPage() {
   return (
     <div className="pt-20 min-h-screen" style={{ background: "#020617" }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        {/* Back Link */}
+        <div className="mb-8">
+          <Link
+            href="/shop"
+            className="inline-flex items-center gap-2 text-brand-muted hover:text-brand-white transition-colors group font-heading font-bold tracking-widest text-[13px] sm:text-[15px] uppercase"
+          >
+            <span className="group-hover:-translate-x-1.5 transition-transform duration-300 inline-block">←</span>
+            <span>Continue Shopping</span>
+          </Link>
+        </div>
+
         <div className="mb-10">
           <h1 className="font-heading font-bold text-brand-white" style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}>
             Your Bag

@@ -201,13 +201,21 @@ export default function CartDrawer() {
                   CHECKOUT — {formatPrice(total)}
                 </Link>
 
-                <Link
-                  href="/cart"
-                  onClick={closeCart}
-                  className="flex items-center justify-center w-full py-3 text-sm text-brand-muted hover:text-brand-white transition-colors"
-                >
-                  View full cart
-                </Link>
+                <div className="flex justify-between items-center text-xs pt-1">
+                  <button
+                    onClick={closeCart}
+                    className="text-brand-muted hover:text-brand-white transition-colors py-1.5 flex items-center gap-1 font-heading font-bold tracking-wider uppercase text-[10px]"
+                  >
+                    ← Continue Shopping
+                  </button>
+                  <Link
+                    href="/cart"
+                    onClick={closeCart}
+                    className="text-brand-muted hover:text-brand-white transition-colors py-1.5 underline font-heading font-bold tracking-wider uppercase text-[10px]"
+                  >
+                    View full cart
+                  </Link>
+                </div>
               </div>
             )}
           </motion.div>
